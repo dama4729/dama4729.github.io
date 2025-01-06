@@ -5718,7 +5718,7 @@
 							         	if(appCheck == 0){
 							         		xVals.push(x);
 							         		packing.push([centX,centY,rad]);
-							         		if(1 == 0 && (r == 2 || (r == 3 && centX > 0) || (r == 15 && centX > 0 && centY == 0.5))){
+							         		if(r != 1){
 							         			var mult = 0.05;
 							         			if(r >= 10){ mult = 0.035; }
 							         			if(r >= 100){ mult = 0.022; }
@@ -5733,7 +5733,7 @@
 													newText.appendChild(textNode);
 													layer.appendChild(newText);
 												}
-												if(r == 1 && 1 == 0){
+												if(r == 1){
 													var mult = 0.01;
 							         			var newText = document.createElementNS(NS, "text");
 							         			newText.setAttribute("x",String(originX + scale * 0.4));     
@@ -5748,10 +5748,12 @@
 												}
 							         	}
 							         	else{
+										if(1 == 0){
 												xVals.push(x);
 							         		circle.setAttribute("stroke-width", String(0.6*thick));
 							         		circle.setAttribute("stroke", color);
-							         		layer.appendChild(circle);							         	
+							         		layer.appendChild(circle);
+										}
 							         	}
 							         }							         
 							         
