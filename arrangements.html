@@ -5924,7 +5924,8 @@
 
 		    curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
-		for (var r = 1; r <= 2; ++r) {
+		for (var r = 1; r <= 5; ++r) {
+			demo.innerHTML += r.toString() + ",";
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
