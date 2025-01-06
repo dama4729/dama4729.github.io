@@ -5940,7 +5940,6 @@
 								var cocurv2 = (1 - ccY2 * ccY2 - ccX2 * ccX2) / curvature;
 								var inprod = ccX * ccX2 + ccY * ccY2 - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
-								demo.innerHTML += String(sqrtp * newcurv / 2) + "\n";
 								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
 									var rad = 1 / newcurv;
 									var centX = (ccX2 - inprod * ccX) / newcurv;
