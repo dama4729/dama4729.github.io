@@ -6052,14 +6052,10 @@
                             scale = 200 / (two + 1); originX = (maxWidth - initWidth) / 2; originY = maxWidth / 2 + scale * sqrt / (2 * two);
                         }
                         else { scale = initWidth * two / (1.1666*sqrt); originX = maxWidth / 2 - scale * (two + 1) / 4; originY = (maxWidth + initWidth - 16.666) / 2; }
-                        
-                        if(1 == 0){  
-									//for job talk in Q(sqrt(-23))
-									scale = initWidth/1.25; originX = (maxWidth)/2-0.29*scale; originY = maxWidth/2+scale*0.388;   
-									
-									//for job talk in Q(sqrt(-1))
-									scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2;             
-                        }
+                        //for job talk in Q(sqrt(-23))
+                        if(1 == 0){ scale = initWidth/1.25; originX = (maxWidth)/2-0.29*scale; originY = maxWidth/2+scale*0.388; }
+			//for job talk in Q(sqrt(-1))
+			if(1 == 1){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
                         circArray = []; reps = []; normInd = []; styles = []; R = Math.floor(26.5 - 2 * sqrt / two); visible = []; curvSet = initWidth; prin = []; tor = []; dets = []; infoArray = []; selectArray = [];
                         background.setAttribute("fill", "none"); canvasWidth = initWidth; canvasLeft = canvasTop = (maxWidth - initWidth) / 2; delta = initWidth / containWidth; infoCount = 0; selectCount = 0; selectLabelCount = 0;
                         canvas.setAttribute("viewBox", canvasLeft.toString() + " " + canvasTop.toString() + " " + initWidth.toString() + " " + initWidth.toString());
