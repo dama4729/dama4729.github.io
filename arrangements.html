@@ -5837,12 +5837,8 @@
 												packing.push([centX,centY,rad,r]);						         
 							        	 	}
 							         	else{ 
-							         		var cX = centY - 0.5*(sqrt-1);
-							         		var cY = 0.5*(1+sqrt) - centX;
-							         		circle.setAttribute("cx", String(originX + scale * cX));
-							         		circle.setAttribute("cy", String(originY - scale * cY));
 							         		circle.setAttribute("stroke", "rgb(180,180,180)"); 
-							         		circle.setAttribute("stroke-width", String(0.5*thick)); 
+							         		circle.setAttribute("stroke-width", String(0.6*thick)); 
 							         		if(1 == 1){ layer.appendChild(circle); }
 							         	}
 							         }					         
