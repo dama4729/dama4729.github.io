@@ -5663,7 +5663,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 1){
+							         if(1 == 0){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5806,7 +5806,7 @@
 							         	}
 							         }
 							         //Baragar-Lautzenheiser
-							         if(1 == 0){
+							         if(1 == 1){
 							         	var pack = -1;
 							         	demo.innerHTML = d;
 							         	if(d == 1 && (0 < centX && 1 > centX) && (q % 2 == 0 && r % 2 == 0 && y % 8 == 0)){				         	
@@ -5922,42 +5922,7 @@
 						}
           		}
 
-		    curvLayer = document.getElementById("1");
-		var layer = curvLayer.childNodes[i];
-		for (var r = 1; r <= 2; ++r) {
-			var curvature = 2 * r / sqrtp;
-			for (var y = 0; y < radii[r].length; ++y) {
-				var ccY = radii[r][y][0] / (sqrtp * sqrt);
-				for (var x = 1; x < radii[r][y].length; ++x) {
-					var ccX = radii[r][y][x] / sqrtp;
-					var cocurv = (1 - ccY * ccY - ccX * ccX) / curvature;
-					for (var r2 = 1; r2 <= maxR; ++r2) {
-						var curvature2 = 2 * r2 / sqrtp;
-						for (var y2 = 0; y2 < radii[r2].length; ++y2) {
-							var ccY2 = radii[r2][y2][0] / (sqrtp * sqrt);
-							for (var x2 = 1; x2 < radii[r2][y2].length; ++x2) {
-								var ccX2 = radii[r2][y2][x2] / sqrtp;
-								var cocurv2 = (1 - ccY2 * ccY2 - ccX2 * ccX2) / curvature;
-								var inprod = ccX * ccX2 + ccY * ccY2 - curvature * cocurv2 - curvature2 * cocurv;
-								var newcurv = curvature2 - inprod * curvature;
-								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
-									var rad = 1 / newcurv;
-									var centX = (ccX2 - inprod * ccX) / newcurv;
-									var centY = (ccY2 - inprod * ccY) / newcurv;
-									var circle = document.createElementNS(NS, "circle");
-									circle.setAttribute("cx", String(originX + scale * centX));
-									circle.setAttribute("cy", String(originY - scale * centY));
-									circle.setAttribute("r", String(scale* rad));
-									circle.setAttribute("fill", "none");
-									circle.setAttribute("stroke-width", String(0.6 * thick));
-									layer.appendChild(circle);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
+		   
 
 		    
                if (i >= total - h) { circArray[i % h] = radii; }
