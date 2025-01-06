@@ -5924,8 +5924,7 @@
 
 		    curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
-		for (var r = 1; r <= 5; ++r) {
-			demo.innerHTML += r.toString() + ",";
+		for (var r = 1; r <= 2; ++r) {
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
@@ -5941,6 +5940,7 @@
 								var cocurv2 = (1 - ccY2 * ccY2 - ccX2 * ccX2) / curvature;
 								var inprod = ccX * ccX2 + ccY * ccY2 - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
+								demo.innerHTML += sqrtp * newcurv / 2 + "\n";
 								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
 									var rad = 1 / newcurv;
 									var centX = (ccX2 - inprod * ccX) / newcurv;
