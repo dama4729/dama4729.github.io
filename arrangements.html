@@ -5721,6 +5721,8 @@
 										circle.setAttribute("stroke", color);
 										layer.appendChild(circle);
 							         		packing.push([centX,centY,rad]);
+										//add curvature text nodes
+										if(1 == 0){
 							         		if(r != 1){
 							         			var mult = 0.05;
 							         			if(r >= 10){ mult = 0.035; }
@@ -5736,7 +5738,7 @@
 													newText.appendChild(textNode);
 													layer.appendChild(newText);
 												}
-												if(r == 1){
+										if(r == 1){
 													var mult = 0.01;
 							         			var newText = document.createElementNS(NS, "text");
 							         			newText.setAttribute("x",String(originX + scale * 0.4));     
@@ -5748,7 +5750,8 @@
 													var textNode = document.createTextNode("-1");
 													newText.appendChild(textNode);
 													layer.appendChild(newText);
-												}
+										}
+										}
 							         	}
 							         	else{
 										if(1 == 0){
