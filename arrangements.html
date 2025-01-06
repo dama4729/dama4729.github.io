@@ -4771,7 +4771,7 @@
                         var thick = 0.15;
                         pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([86,2,0]).fillColor([193,3,1]).fillOpacity(1).fillAndStroke();
                      }
-			if (1 == 1) {
+			if (1 == 0) {
 				var pdfRad = ratio * scale2 * 0.125;
 				var pdfX = ratio * (originX + scale2 * (0.125) - canvasLeft);
 				var pdfY = ratio * (originY - scale2 * (0.5) - canvasTop);
@@ -5581,7 +5581,7 @@
 				                        line.setAttribute("x1", x1); line.setAttribute("y1", y1);
 				                        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
 												//normal												
-												if(1 == 0){
+												if(1 == 1){
 				                        	line.setAttribute("stroke", color);
 				                        	line.setAttribute("stroke-width", String(0.6*thick));
 				                        	layer.appendChild(line);
@@ -5663,7 +5663,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 0){
+							         if(1 == 1){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5720,7 +5720,7 @@
 							         	}
 							         }
 										//-1, 2, 2, 3 packing
-										if(1 == 1){
+										if(1 == 0){
 							         	var appCheck = 0;
 							         	if(centX*centX + (centY-0.5)*(centY-0.5) < 0.25){
 							         		loopy: for(var c = 2; c < radii.length; c++){
