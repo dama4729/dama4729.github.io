@@ -5925,7 +5925,7 @@
 		   
 		curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
-		for (var r = 1; r <= 1; ++r) {
+		for (var r = 1; r <= 5; ++r) {
 			demo.innerHTML = "";
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
@@ -5934,7 +5934,7 @@
 					if(r == 2 && radii[r][y][0] == 4 && radii[r][y][x] == 0){ demo.innerHTML += "here"; }
 					var ccX = radii[r][y][x] / sqrtp;
 					var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
-					for (var r2 = 4; r2 <= 4; ++r2) {
+					for (var r2 = 2; r2 <= 10; ++r2) {
 						var curvature2 = 2 * r2 / sqrtp;
 						for (var y2 = 0; y2 < radii[r2].length; ++y2) {
 							var ccY2 = radii[r2][y2][0] / (sqrtp * sqrt);
@@ -5946,7 +5946,6 @@
 								var newcurv = curvature2 - inprod * curvature;
 								if (r == 1 && radii[r][y][0] == 4 && radii[r][y][x] == 0 && r2 == 4 && radii[r2][y2][0] == 19 && radii[r2][y2][x2] == 1) { demo.innerHTML += "...." + inprod.toString(); }
 								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
-									demo.innerHTML += "yes!!!";
 									var rad = 1 / Math.abs(newcurv);
 									var centX = (ccX2 - inprod * ccX) / newcurv;
 									var centY = (ccY2 - inprod * ccY) / newcurv;
@@ -5956,6 +5955,7 @@
 									circle.setAttribute("r", String(scale * rad));
 									circle.setAttribute("fill", "none");
 									circle.setAttribute("stroke-width", String(0.6 * thick));
+									circle.setAttribute("stroke", "rgb(0,0,0)");
 									layer.appendChild(circle);
 								}
 							}
