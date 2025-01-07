@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ originY = (maxWidth + initWidth - 16.666) / 2;<!DOCTYPE html>
 
 <html>
 <head>
@@ -5522,7 +5522,7 @@
             }
 
             function render(i) {
-
+		maxR = 60;
                var ii = reps[i % h][0][1];
 					if(styles[2][i][7] % 2 == 0){ var color = "none"; }
 					else { var color = "rgb(" + styles[2][i][8].toString() + "," + styles[2][i][9].toString() + "," + styles[2][i][10].toString() + ")"; }
@@ -5927,7 +5927,7 @@
 		var layer = curvLayer.childNodes[i];
 		    var newcircs = [];
 		    var round1 = [];
-		for (var r = 1; r <= 10; ++r) {
+		for (var r = 1; r <= 20; ++r) {
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
@@ -5969,9 +5969,9 @@
 			}
 		}
 		newcircs.push(round1);
-		for(round = 0; round < 2; round++){
+		for(round = 0; round < 1; round++){
 			var round2 = [];
-			for (var r = 1; r <= 10; ++r) {
+			for (var r = 1; r <= 20; ++r) {
 			var curvature = 2 * r / sqrtp;
 				for (var y = 0; y < radii[r].length; ++y) {
 					var ccY = radii[r][y][0] / (sqrtp * sqrt);
@@ -6174,7 +6174,7 @@
                         }
                         else { scale = initWidth * two / (1.1666*sqrt); originX = maxWidth / 2 - scale * (two + 1) / 4; originY = (maxWidth + initWidth - 16.666) / 2; }
                         //for job talk in Q(sqrt(-23))
-                        if(1 == 1){ scale = initWidth/1.4; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
+                        if(1 == 1){ scale = initWidth/1.04; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
 			//for job talk in Q(sqrt(-1))
 			if(1 == 0){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
                         circArray = []; reps = []; normInd = []; styles = []; R = Math.floor(26.5 - 2 * sqrt / two); visible = []; curvSet = initWidth; prin = []; tor = []; dets = []; infoArray = []; selectArray = [];
