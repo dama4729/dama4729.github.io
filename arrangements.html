@@ -5944,7 +5944,7 @@
 								var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
 								var testint = sqrtp * newcurv / 2;
-								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) <= maxR) {
+								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) <= 30) {
 									var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
 									if(round1.includes(newcirc) == false){
 										round1.push(newcirc);
@@ -5986,7 +5986,7 @@
 							var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 							var newcurv = curvature2 - inprod * curvature;
 							var testint = sqrtp * newcurv / 2;
-							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) <= maxR) {
+							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) <= 30) {
 								var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
 								var check = 0;
 								for(var mm = 0; mm < round; ++mm){
