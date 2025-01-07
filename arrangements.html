@@ -5926,11 +5926,11 @@
 curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
 		for (var r = 1; r <= 2; ++r) {
-			demo.innerHTML += r.toString();
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
 				for (var x = 1; x < radii[r][y].length; ++x) {
+					if(r == 2 && radii[r][y][0] == 4 && radii[r][y][0] == 0){ demo.innerHTML += "here"; }
 					var ccX = radii[r][y][x] / sqrtp;
 					var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
 					for (var r2 = 1; r2 <= maxR; ++r2) {
@@ -5938,11 +5938,12 @@ curvLayer = document.getElementById("1");
 						for (var y2 = 0; y2 < radii[r2].length; ++y2) {
 							var ccY2 = radii[r2][y2][0] / (sqrtp * sqrt);
 							for (var x2 = 1; x2 < radii[r2][y2].length; ++x2) {
+								
 								var ccX2 = radii[r2][y2][x2] / sqrtp;
 								var cocurv2 = (ccY2 * ccY2 + ccX2 * ccX2 - 1) / curvature2;
 								var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
-								
+								if(r == 2 && radii[r][y][0] == 4 && radii[r][y][0] == 0 && r2 == 9 && radii[r2][y2][0] == 50 && radii[r2][y2][x2] == 0){ demo.innerHTML += "again"; }
 								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
 									var rad = 1 / Math.abs(newcurv);
 									var centX = (ccX2 - inprod * ccX) / newcurv;
