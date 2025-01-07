@@ -5925,24 +5925,41 @@
 		   
 		curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
-		var circle = document.createElementNS(NS, "circle");
-		circle.setAttribute("cx", String(originX + scale * 0));
-		circle.setAttribute("cy", String(originY - scale / sqrt));
-		circle.setAttribute("r", String(scale / sqrt));
-		circle.setAttribute("fill", "none");							         
-		circle.setAttribute("stroke-width", String(5*thick));
-		circle.setAttribute("stroke", "rgb(193,3,1)");
-		layer.appendChild(circle);
 		for (var r = 2; r <= 2; ++r) {
 			demo.innerHTML = "";
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
 				for (var x = 1; x < radii[r][y].length; ++x) {
-					if(r == 2 && radii[r][y][0] == 4 && radii[r][y][0] == 0){ demo.innerHTML += "here"; }
+					if(r == 2 && radii[r][y][0] == 4 && radii[r][y][x] == 0){ demo.innerHTML += "here"; }
 					var ccX = radii[r][y][x] / sqrtp;
 					var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
-					demo.innerHTML += r.toString() + "," + radii[r][y][0].toString() + "," + radii[r][y][x].toString() + "..............\n";
+					for (var r2 = 1; r2 <= 9; ++r2) {
+						var curvature2 = 2 * r2 / sqrtp;
+						for (var y2 = 0; y2 < radii[r2].length; ++y2) {
+							var ccY2 = radii[r2][y2][0] / (sqrtp * sqrt);
+							for (var x2 = 1; x2 < radii[r2][y2].length; ++x2) {
+
+								var ccX2 = radii[r2][y2][x2] / sqrtp;
+								var cocurv2 = (ccY2 * ccY2 + ccX2 * ccX2 - 1) / curvature2;
+								var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
+								var newcurv = curvature2 - inprod * curvature;
+								if (r == 2 && radii[r][y][0] == 4 && radii[r][y][x] == 0 && r2 == 9 && radii[r2][y2][0] == 50 && radii[r2][y2][x2] == 0) { demo.innerHTML += "...." + inprod.toString(); }
+								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
+									var rad = 1 / Math.abs(newcurv);
+									var centX = (ccX2 - inprod * ccX) / newcurv;
+									var centY = (ccY2 - inprod * ccY) / newcurv;
+									var circle = document.createElementNS(NS, "circle");
+									circle.setAttribute("cx", String(originX + scale * centX));
+									circle.setAttribute("cy", String(originY - scale * centY));
+									circle.setAttribute("r", String(scale * rad));
+									circle.setAttribute("fill", "none");
+									circle.setAttribute("stroke-width", String(0.6 * thick));
+									layer.appendChild(circle);
+								}
+							}
+						}
+					}
 				}
 			}
 		}
