@@ -5923,9 +5923,18 @@
 					}
 
 		   
-curvLayer = document.getElementById("1");
+		curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
-		for (var r = 1; r <= 2; ++r) {
+		var circle = document.createElementNS(NS, "circle");
+		circle.setAttribute("cx", String(originX + scale * 0));
+		circle.setAttribute("cy", String(originY - scale / sqrt));
+		circle.setAttribute("r", String(scale / sqrt));
+		circle.setAttribute("fill", "none");							         
+		circle.setAttribute("stroke-width", String(5*thick));
+		circle.setAttribute("stroke", "rgb(193,3,1)");
+		layer.appendChild(circle);
+		for (var r = 2; r <= 2; ++r) {
+			demo.innerHTML = "";
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
@@ -5933,7 +5942,7 @@ curvLayer = document.getElementById("1");
 					if(r == 2 && radii[r][y][0] == 4 && radii[r][y][0] == 0){ demo.innerHTML += "here"; }
 					var ccX = radii[r][y][x] / sqrtp;
 					var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
-					demo.innerHTML += r.toString() + "," + radii[r][y][0].toString() + "," + radii[r][y][x].toString() + "\n";
+					demo.innerHTML += r.toString() + "," + radii[r][y][0].toString() + "," + radii[r][y][x].toString() + "..............\n";
 				}
 			}
 		}
