@@ -4802,7 +4802,7 @@
 				pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 
 				pdfRad = ratio * scale2 / 3;
-				pdfX = ratio * (originX - 4 * scale2 / 3 - canvasLeft);
+				pdfX = ratio * (originX + 2 * scale2 / 3 - canvasLeft);
 				pdfY = ratio * (originY - canvasTop);
 				pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 
