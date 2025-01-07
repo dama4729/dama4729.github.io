@@ -5811,7 +5811,7 @@
 									//-23 circle packing
 										if(1 == 1){
 							         	var appCheck = 0;
-							         	if(centX*centX + (centY-2/sqrt)*(centY-2/sqrt) < 4 / (sqrt * sqrt)){
+							         	if((centX-1)*(centX-1) + (centY-2/sqrt)*(centY-2/sqrt) < 4 / (sqrt * sqrt)){
 							         		loopy: for(var c = 2; c < radii.length; c++){
 							         			var radC = sqrtp / (2*c);
 													for(var b = 0; b < radii[c].length; b++){
@@ -6288,7 +6288,7 @@
                         }
                         else { scale = initWidth * two / (1.1666*sqrt); originX = maxWidth / 2 - scale * (two + 1) / 4; originY = (maxWidth + initWidth - 16.666) / 2; }
                         //for job talk in Q(sqrt(-23))
-                        if(1 == 1){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
+                        if(1 == 0){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
 			//for job talk in Q(sqrt(-1))
 			if(1 == 0){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
                         circArray = []; reps = []; normInd = []; styles = []; R = Math.floor(26.5 - 2 * sqrt / two); visible = []; curvSet = initWidth; prin = []; tor = []; dets = []; infoArray = []; selectArray = [];
