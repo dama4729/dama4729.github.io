@@ -5680,7 +5680,7 @@
 							         	}
 							         	
 							         	//elementary for job talk
-							         	if(r <= 20){ layer.appendChild(circle); }
+							         	if(r <= 40){ layer.appendChild(circle); }
 							         }
 										//strip packing							         
 							         if(1 == 0){
@@ -5945,7 +5945,7 @@
 								var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
 								var testint = sqrtp * newcurv / 2;
-								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 2 * maxR) {
+								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 5 * maxR) {
 									var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
 									if(round1.includes(newcirc) == false){
 										round1.push(newcirc);
@@ -5981,13 +5981,13 @@
 						var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
 						for (var r2 = 0; r2 < newcircs[round].length; ++r2) {
 							var curvature2 = newcircs[round][r2][0];
-							var cocurv = newcircs[round][r2][1];
+							var cocurv2 = newcircs[round][r2][1];
 							var ccX2 = newcircs[round][r2][2];
 							var ccY2 = newcircs[round][r2][3];
 							var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 							var newcurv = curvature2 - inprod * curvature;
 							var testint = sqrtp * newcurv / 2;
-							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 2 * maxR) {
+							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 5 * maxR) {
 								var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
 								var check = 0;
 								for(var mm = 0; mm < round; ++mm){
@@ -6017,6 +6017,8 @@
 				newcircs[round + 1].push(round2[nn]);
 			}
 		}
+
+		
 		    
                if (i >= total - h) { circArray[i % h] = radii; }
                if (visible[i] == 1) { for (var k = 3; k < 5; k++) { if (styles[k][i][7] % 2 == 1) { styling(k, i); } } }
