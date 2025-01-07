@@ -5925,13 +5925,13 @@
 		   
 		curvLayer = document.getElementById("1");
 		var layer = curvLayer.childNodes[i];
+		    var newcircs = [];
+		    var round1 = [];
 		for (var r = 1; r <= 5; ++r) {
-			demo.innerHTML = "";
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
 				for (var x = 1; x < radii[r][y].length; ++x) {
-					if(r == 2 && radii[r][y][0] == 4 && radii[r][y][x] == 0){ demo.innerHTML += "here"; }
 					var ccX = radii[r][y][x] / sqrtp;
 					var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
 					for (var r2 = 2; r2 <= 10; ++r2) {
@@ -5944,8 +5944,56 @@
 								var cocurv2 = (ccY2 * ccY2 + ccX2 * ccX2 - 1) / curvature2;
 								var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
-								if (r == 1 && radii[r][y][0] == 4 && radii[r][y][x] == 0 && r2 == 4 && radii[r2][y2][0] == 19 && radii[r2][y2][x2] == 1) { demo.innerHTML += "...." + inprod.toString(); }
-								if (Math.abs(Math.round(sqrtp * newcurv / 2) - (sqrtp * newcurv / 2)) > 0.01) {
+								var testint = sqrtp * newcurv / 2;
+								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 2 * maxR) {
+									var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
+									if(round1.includes(newcirc) == false){
+										round1.push(newcirc);
+										var rad = 1 / Math.abs(newcurv);
+										var centX = (ccX2 - inprod * ccX) / newcurv;
+										var centY = (ccY2 - inprod * ccY) / newcurv;
+										var circle = document.createElementNS(NS, "circle");
+										circle.setAttribute("cx", String(originX + scale * centX));
+										circle.setAttribute("cy", String(originY - scale * centY));
+										circle.setAttribute("r", String(scale * rad));
+										circle.setAttribute("fill", "none");
+										circle.setAttribute("stroke-width", String(0.6 * thick));
+										circle.setAttribute("stroke", "rgb(0,0,0)");
+										layer.appendChild(circle);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		newcircs.push(round1);
+		for(round = 0; round < 2; round++){
+			var round2 = [];
+			for (var r = 1; r <= 5; ++r) {
+			var curvature = 2 * r / sqrtp;
+				for (var y = 0; y < radii[r].length; ++y) {
+					var ccY = radii[r][y][0] / (sqrtp * sqrt);
+					for (var x = 1; x < radii[r][y].length; ++x) {
+						var ccX = radii[r][y][x] / sqrtp;
+						var cocurv = (ccY * ccY + ccX * ccX - 1) / curvature;
+						for (var r2 = 0; r2 < newcircs[round].length; ++r2) {
+							var curvature2 = newcircs[round][r2][0];
+							var cocurv = newcircs[round][r2][1];
+							var ccX2 = newcircs[round][r2][2];
+							var ccY2 = newcircs[round][r2][3];
+							var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
+							var newcurv = curvature2 - inprod * curvature;
+							var testint = sqrtp * newcurv / 2;
+							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 2 * maxR) {
+								var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
+								var check = 0;
+								for(var mm = 0; mm < round; ++mm){
+									if(newcircs[mm].includes(newcirc)){ check = 1; break; }
+								}
+								if(check == 0 && round2.includes(newcirc) == false){
+									round2.push(newcirc);
 									var rad = 1 / Math.abs(newcurv);
 									var centX = (ccX2 - inprod * ccX) / newcurv;
 									var centY = (ccY2 - inprod * ccY) / newcurv;
@@ -5962,6 +6010,10 @@
 						}
 					}
 				}
+			}
+			newcircs.push([]);
+			for(var nn = 0; nn < round2.length; ++nn){
+				newcircs[round + 1].push(round2[nn]);
 			}
 		}
 		    
