@@ -4794,25 +4794,25 @@
 				pdf.lineCap("round").moveTo(x1, y1).lineTo(x1, y2).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 			}
 
-			if (1 == 0) {
+			if (1 == 1) {
 				var pdfRad = ratio * scale2;
-				var pdfX = ratio * (originX + scale2 - canvasLeft);
+				var pdfX = ratio * (originX + 2 * scale2 - canvasLeft);
 				var pdfY = ratio * (originY - canvasTop);
 				var thick = 2;
 				pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 
 				pdfRad = ratio * scale2 / 3;
-				pdfX = ratio * (originX - scale2 / 3 - canvasLeft);
+				pdfX = ratio * (originX - 4 * scale2 / 3 - canvasLeft);
 				pdfY = ratio * (originY - canvasTop);
 				pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 
 				pdfRad = ratio * scale2 / 5;
-				pdfX = ratio * (originX - scale2 / 10 - canvasLeft);
+				pdfX = ratio * (originX + 9 * scale2 / 10 - canvasLeft);
 				pdfY = ratio * (originY - sqrt * scale2 / 10 - canvasTop);
 				pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 
 				pdfRad = ratio * scale2 / 13;
-				pdfX = ratio * (originX - canvasLeft);
+				pdfX = ratio * (originX + scale2 - canvasLeft);
 				pdfY = ratio * (originY - 2 * sqrt * scale2 / 13 - canvasTop);
 				pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([193, 3, 1]).stroke();
 
