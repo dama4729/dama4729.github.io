@@ -5927,7 +5927,7 @@
 		var layer = curvLayer.childNodes[i];
 		    var newcircs = [];
 		    var round1 = [];
-		for (var r = 1; r <= 5; ++r) {
+		for (var r = 1; r <= 10; ++r) {
 			var curvature = 2 * r / sqrtp;
 			for (var y = 0; y < radii[r].length; ++y) {
 				var ccY = radii[r][y][0] / (sqrtp * sqrt);
@@ -5969,9 +5969,9 @@
 			}
 		}
 		newcircs.push(round1);
-		for(round = 0; round < 2; round++){
+		for(round = 0; round < 1; round++){
 			var round2 = [];
-			for (var r = 1; r <= 5; ++r) {
+			for (var r = 1; r <= 10; ++r) {
 			var curvature = 2 * r / sqrtp;
 				for (var y = 0; y < radii[r].length; ++y) {
 					var ccY = radii[r][y][0] / (sqrtp * sqrt);
