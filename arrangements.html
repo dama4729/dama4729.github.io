@@ -5679,8 +5679,7 @@
 							         		else{ circle.setAttribute("stroke", "none"); }
 							         	}
 							         	
-							         	//elementary for job talk
-							         	if(r <= 40){ layer.appendChild(circle); }
+							         	layer.appendChild(circle);
 							         }
 										//strip packing							         
 							         if(1 == 0){
@@ -5945,7 +5944,7 @@
 								var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 								var newcurv = curvature2 - inprod * curvature;
 								var testint = sqrtp * newcurv / 2;
-								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 2 * maxR) {
+								if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) <= maxR) {
 									var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
 									if(round1.includes(newcirc) == false){
 										round1.push(newcirc);
@@ -5958,7 +5957,7 @@
 										circle.setAttribute("r", String(scale * rad));
 										circle.setAttribute("fill", "none");
 										circle.setAttribute("stroke-width", String(0.6 * thick));
-										circle.setAttribute("stroke", "rgb(0,0,0)");
+										circle.setAttribute("stroke", "rgb(180,180,180)");
 										layer.appendChild(circle);
 									}
 								}
@@ -5987,7 +5986,7 @@
 							var inprod = 2 * (ccX * ccX2 + ccY * ccY2) - curvature * cocurv2 - curvature2 * cocurv;
 							var newcurv = curvature2 - inprod * curvature;
 							var testint = sqrtp * newcurv / 2;
-							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) < 2 * maxR) {
+							if (Math.abs(Math.round(testint) - (testint)) > 0.01 && Math.abs(testint) <= maxR) {
 								var newcirc = [newcurv, cocurv2 - inprod * cocurv, ccX2 - inprod * ccX, ccY2 - inprod * ccY];
 								var check = 0;
 								for(var mm = 0; mm < round; ++mm){
@@ -6004,7 +6003,7 @@
 									circle.setAttribute("r", String(scale * rad));
 									circle.setAttribute("fill", "none");
 									circle.setAttribute("stroke-width", String(0.6 * thick));
-									circle.setAttribute("stroke", "rgb(0,0,0)");
+									circle.setAttribute("stroke", "rgb(180,180,180)");
 									layer.appendChild(circle);
 								}
 							}
