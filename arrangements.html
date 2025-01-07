@@ -1,4 +1,4 @@
- originY = (maxWidth + initWidth - 16.666) / 2;<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -5666,7 +5666,7 @@
 										//normal							         
 							         if(1 == 1){
 							         	xVals.push(x);
-							         	circle.setAttribute("stroke-width", String(1*thick));
+							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
 							         	//job talk apollonius
 							         	if(r == -1 || r == -15){
@@ -5957,7 +5957,7 @@
 										circle.setAttribute("r", String(scale * rad));
 										circle.setAttribute("fill", "none");
 										circle.setAttribute("stroke-width", String(0.6 * thick));
-										circle.setAttribute("stroke", "rgb(180,180,180)");
+										circle.setAttribute("stroke", "rgb(0,0,0)");
 										layer.appendChild(circle);
 									}
 								}
@@ -6003,7 +6003,7 @@
 									circle.setAttribute("r", String(scale * rad));
 									circle.setAttribute("fill", "none");
 									circle.setAttribute("stroke-width", String(0.6 * thick));
-									circle.setAttribute("stroke", "rgb(180,180,180)");
+									circle.setAttribute("stroke", "rgb(0,0,0)");
 									layer.appendChild(circle);
 								}
 							}
@@ -6016,7 +6016,7 @@
 				newcircs[round + 1].push(round2[nn]);
 			}
 		}
-
+	if(1 == 0){
 		var circle = document.createElementNS(NS, "circle");
 		circle.setAttribute("cx", String(originX + scale * 0));
 		circle.setAttribute("cy", String(originY - scale * 2 / sqrt));
@@ -6039,6 +6039,7 @@
 		line.setAttribute("stroke", "rgb(0,0,0)");
 		line.setAttribute("stroke-width", String(1*thick));
 		layer.appendChild(line);
+	}
 		    
                if (i >= total - h) { circArray[i % h] = radii; }
                if (visible[i] == 1) { for (var k = 3; k < 5; k++) { if (styles[k][i][7] % 2 == 1) { styling(k, i); } } }
