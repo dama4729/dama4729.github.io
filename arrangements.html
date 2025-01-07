@@ -5809,7 +5809,7 @@
 										layer.appendChild(circle);
 							         		packing.push([centX,centY,rad]);
 										//add curvature text nodes
-										if(1 == 0){
+										if(1 == 1){
 							         		if(r != 1){
 							         			var mult = 0.05;
 							         			if(r >= 10){ mult = 0.035; }
@@ -5828,8 +5828,8 @@
 										if(r == 1){
 													var mult = 0.01;
 							         			var newText = document.createElementNS(NS, "text");
-							         			newText.setAttribute("x",String(originX + scale * 0.4));     
-													newText.setAttribute("y",String(originY - scale * 0.93)); 
+							         			newText.setAttribute("x",String(originX + scale * 0.337));     
+													newText.setAttribute("y",String(originY - scale * 0.776)); 
 													newText.setAttribute("font-size",String(canvasWidth*mult*16/r));
 													newText.setAttribute("text-anchor","middle");
 													newText.setAttribute("alignment-baseline","central");
