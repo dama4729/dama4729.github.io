@@ -5639,7 +5639,17 @@
 							layer.setAttribute("width", maxWidth.toString());
 							layer.setAttribute("height", maxWidth.toString());
 							curvLayer.appendChild(layer);
-						}						
+						}		
+
+						if (r == 1 && d == 4) {
+			var circle = document.createElementNS(NS, "circle");
+			circle.setAttribute("cx", String(originX));
+			circle.setAttribute("cy", String(originY - scale * 2 / sqrt));
+			circle.setAttribute("r", String(scale * 2 / sqrt));
+			circle.setAttribute("fill", "none");
+			circle.setAttribute("stroke-width", String(5 * thick));
+			layer.appendChild(circle);
+		}
 						
 						if(visible[i] == 1){
 					   	var yVals = [], rad = sqrtp / (2 * r);
