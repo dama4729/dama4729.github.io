@@ -4783,7 +4783,7 @@
                         pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([86,2,0]).fillColor([193,3,1]).fillOpacity(1).fillAndStroke();
                      }
 
-		if(1 == 1){
+		if(1 == 0){
 				
 			var thick = 1.2;
 			var pdfRad = ratio * 2 * scale2 / sqrt;
@@ -5596,6 +5596,7 @@
 					var radii = [], principal = two * two * prin[i], torsion = tor[i];
 					var thick = 0.003 * canvasWidth * (0.1 + 3 * styles[2][i][6]), sqrtp = Math.sqrt(principal) / sqrt;
 					maxR = Math.floor(R * curvSet / canvasWidth); document.getElementById("curv").value = maxR.toString();
+		    maxR = 3900;
 					var childCount = arrangement.childNodes.length;
 					for (var k = maxR + 1; k < childCount; k++) { arrangement.removeChild(arrangement.lastChild); }
 					var curvLayer = document.getElementById("0");
@@ -5725,7 +5726,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 1){
+							         if(1 == 0){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5908,7 +5909,7 @@
 
 
 									//-39 circle packing
-										if(1 == 0){
+										if(1 == 1){
 							         	var appCheck = 0;
 							         	if((centX-35/26)*(centX-35/26) + (centY-135/(13*sqrt))*(centY-135/(13*sqrt)) < 3 / 8788){
 							         		loopy: for(var c = 0; c < packing.length; c++){
@@ -6355,7 +6356,7 @@
                         if(1 == 0){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
 			//for job talk in Q(sqrt(-1))
 			if(1 == 0){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
-			if(1 == 0){ scale = initWidth/(1.1666 * 0.03695); originX = maxWidth / 2 - scale * 35 / 26; originY = maxWidth / 2 + scale * 135 / (13 * sqrt); }
+			if(1 == 1){ scale = initWidth/(1.1666 * 0.03695); originX = maxWidth / 2 - scale * 35 / 26; originY = maxWidth / 2 + scale * 135 / (13 * sqrt); }
                         circArray = []; reps = []; normInd = []; styles = []; R = Math.floor(26.5 - 2 * sqrt / two); visible = []; curvSet = initWidth; prin = []; tor = []; dets = []; infoArray = []; selectArray = [];
                         background.setAttribute("fill", "none"); canvasWidth = initWidth; canvasLeft = canvasTop = (maxWidth - initWidth) / 2; delta = initWidth / containWidth; infoCount = 0; selectCount = 0; selectLabelCount = 0;
                         canvas.setAttribute("viewBox", canvasLeft.toString() + " " + canvasTop.toString() + " " + initWidth.toString() + " " + initWidth.toString());
