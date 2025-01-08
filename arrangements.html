@@ -4789,6 +4789,7 @@
 			var pdfRad = ratio * 2 * scale2 / sqrt;
 			var pdfX = 1 + ratio * (originX + scale2 * 0 - canvasLeft);
 			var pdfY = 1 + ratio * (originY - 2 * scale2 / sqrt - canvasTop);
+			if(1 == 0){
 			pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([0, 0, 0]).stroke();
 
 			pdfRad = ratio * 2 * scale2 / (13 * sqrt);
@@ -4800,6 +4801,7 @@
 			var x2 = 1 + ratio * (originX + scale2 * 2.4 - canvasLeft);
 			var y1 = 1 + ratio * (originY - canvasTop);
 			pdf.lineCap("round").moveTo(x1, y1).lineTo(x2, y1).lineWidth(thick).strokeColor([0, 0, 0]).stroke();
+			}
 
 			pdfRad = ratio * scale2 * 0.023;
 			pdfX = 1 + ratio * (originX + scale2 * 0.37 - canvasLeft);
@@ -5641,7 +5643,7 @@
 				                        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
 												//normal												
 												if(1 == 1){
-				                        	line.setAttribute("stroke", "rgb(180,180,180)");
+				                        	line.setAttribute("stroke", "rgb(0,0,0)");
 				                        	line.setAttribute("stroke-width", String(0.6*thick));
 				                        	layer.appendChild(line);
 				                        }												
@@ -5731,7 +5733,7 @@
 							         	if(r == -1 || r == -15){
 							         		circle.setAttribute("stroke", "rgb(193,3,1)");
 							         	}
-							         	circle.setAttribute("stroke", "rgb(180,180,180)");
+							         	circle.setAttribute("stroke", color);
 							         	layer.appendChild(circle);
 							         }
 										//strip packing							         
