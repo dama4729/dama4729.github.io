@@ -4801,10 +4801,10 @@
 			var y1 = 1 + ratio * (originY - canvasTop);
 			pdf.lineCap("round").moveTo(x1, y1).lineTo(x2, y1).lineWidth(thick).strokeColor([0, 0, 0]).stroke();
 
-			pdfRad = ratio * scale2 * 0.01;
+			pdfRad = ratio * scale2 * 0.023;
 			pdfX = 1 + ratio * (originX + scale2 * 0.37 - canvasLeft);
                         pdfY = 1 + ratio * (originY - scale2 * 0.4 - canvasTop);
-			thick = 0.7;
+			thick = 0.3;
                         pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([86,2,0]).fillColor([193,3,1]).fillOpacity(1).fillAndStroke();
                      }
 			if (1 == 0) {
