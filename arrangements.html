@@ -6291,6 +6291,7 @@
                         if(1 == 0){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
 			//for job talk in Q(sqrt(-1))
 			if(1 == 0){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
+			if(1 == 1){ scale = initWidth/(1.1666 * 0.03695); originX = maxWidth / 2 - scale * 35 / 26; originY = maxWidth / 2 + scale * 135 / (13 * sqrt); }
                         circArray = []; reps = []; normInd = []; styles = []; R = Math.floor(26.5 - 2 * sqrt / two); visible = []; curvSet = initWidth; prin = []; tor = []; dets = []; infoArray = []; selectArray = [];
                         background.setAttribute("fill", "none"); canvasWidth = initWidth; canvasLeft = canvasTop = (maxWidth - initWidth) / 2; delta = initWidth / containWidth; infoCount = 0; selectCount = 0; selectLabelCount = 0;
                         canvas.setAttribute("viewBox", canvasLeft.toString() + " " + canvasTop.toString() + " " + initWidth.toString() + " " + initWidth.toString());
