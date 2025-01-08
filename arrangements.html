@@ -4759,16 +4759,27 @@
 						
 			//job talk -23 and -1
 			if(1 == 1){
-				         	var pdfRad = ratio * scale2 * 0.01;
-				         	pdfRad = ratio * scale2 * 0.018;
-                        var pdfX = ratio * (originX - scale2 * (56/72+0.01) - canvasLeft);
-                        var pdfY = ratio * (originY - scale2 * (8*Math.sqrt(23)/72-0.02) - canvasTop);
-								//job talk -1                        	
-                        if(1 == 1){
-                        	pdfX = 1 + ratio * (originX + scale2 * 0.37 - canvasLeft);
-                        	pdfY = 1 + ratio * (originY - scale2 * 0.4 - canvasTop);
-                        }
-                        var thick = 0.15;
+				
+			var thick = 1.2;
+			var pdfRad = ratio * scale2 * 0.5;
+			var pdfX = ratio * (originX + scale2 * 0 - canvasLeft);
+			var pdfY = ratio * (originY - scale2 / 2 - canvasTop);
+			pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([0, 0, 0]).stroke();
+
+			pdfRad = ratio * scale2 * 0.1;
+			pdfX = ratio * (originX + scale2 * 0.4 - canvasLeft);
+			pdfY = ratio * (originY - scale2 / 2 - canvasTop);
+			pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([0, 0, 0]).stroke();
+
+			var x1 = ratio * (originX - scale2 * 0.4 - canvasLeft);
+			var x2 = ratio * (originX + scale2 * 1.4 - canvasLeft);
+			var y1 = ratio * (originY - canvasTop);
+			pdf.lineCap("round").moveTo(x1, y1).lineTo(x2, y1).lineWidth(thick).strokeColor([0, 0, 0]).stroke();
+
+			pdfRad = ratio * scale2 * 0.01;
+			pdfX = 1 + ratio * (originX + scale2 * 0.37 - canvasLeft);
+                        pdfY = 1 + ratio * (originY - scale2 * 0.4 - canvasTop);
+			thick = 0.15;
                         pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([86,2,0]).fillColor([193,3,1]).fillOpacity(1).fillAndStroke();
                      }
 			if (1 == 0) {
@@ -5605,7 +5616,7 @@
 				                        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
 												//normal												
 												if(1 == 1){
-				                        	line.setAttribute("stroke", "rgb(0,0,0)");
+				                        	line.setAttribute("stroke", "rgb(180,180,180)");
 				                        	line.setAttribute("stroke-width", String(0.6*thick));
 				                        	layer.appendChild(line);
 				                        }												
@@ -5695,7 +5706,7 @@
 							         	if(r == -1 || r == -15){
 							         		circle.setAttribute("stroke", "rgb(193,3,1)");
 							         	}
-							         	circle.setAttribute("stroke", color);
+							         	circle.setAttribute("stroke", "rgb(180,180,180)");
 							         	layer.appendChild(circle);
 							         }
 										//strip packing							         
