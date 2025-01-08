@@ -5910,6 +5910,7 @@
 
 									//-39 circle packing
 										if(1 == 1){
+											var outer = [];
 							         	var appCheck = 0;
 							         	if((centX-35/26)*(centX-35/26) + (centY-135/(13*sqrt))*(centY-135/(13*sqrt)) < 3 / 8788){
 							         		loopy: for(var c = 0; c < packing.length; c++){
@@ -5926,11 +5927,12 @@
 							         		xVals.push(x);
 										circle.setAttribute("stroke-width", String(0.6 * thick));
 										circle.setAttribute("stroke", color);
-										layer.appendChild(circle);
+										if(1 == 0){ layer.appendChild(circle);}
 							         		if(r != 26){ packing.push([centX,centY,rad]); }
+										else{outer = [centX,centY,rad];}
 							         	}
 							         	else{
-										if(1 == 0){
+										if(1 == 1){
 												xVals.push(x);
 							         		circle.setAttribute("stroke-width", String(0.6*thick));
 							         		circle.setAttribute("stroke", "rgb(180,180,180)");
@@ -6240,7 +6242,7 @@
             		}
          		}
          		//packings
-         		if(1 == 0){
+         		if(1 == 1){
                	for(var k = 0; k < verts.length; k++){
                		var line = document.createElementNS(NS, "line");
                		line.setAttribute("data-value", "y");
