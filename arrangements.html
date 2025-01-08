@@ -5880,18 +5880,14 @@
 										if(1 == 1){
 							         	var appCheck = 0;
 							         	if((centX-35/26)*(centX-35/26) + (centY-135/(13*sqrt))*(centY-135/(13*sqrt)) < 3 / 8788){
-							         		loopy: for(var c = 2; c < radii.length; c++){
-							         			var radC = sqrtp / (2*c);
-													for(var b = 0; b < radii[c].length; b++){
-														var centB = radii[c][b][0] / (2*c*sqrt);	
-														for(var a = 1; a < radii[c][b].length; a++){
-															var centA = radii[c][b][a] / (2*c);
-															if((centA-centX)*(centA-centX)+(centB-centY)*(centB-centY) <= radC*radC){
-																appCheck = 1; break loopy;
-															}													
-														}													
-													}							         		
-							         		}
+							         		loopy: for(var c = 0; c < packing.length; c++){
+							         			var radC = packing[c][2];
+											var centB = packing[c][1];	
+											var centA = packing[c][0];
+											if((centA-centX)*(centA-centX)+(centB-centY)*(centB-centY) <= radC*radC){
+												appCheck = 1; break loopy;													
+											}													
+										}
 							         	}
 							         	else{ appCheck = 1; }
 							         	if(appCheck == 0){
