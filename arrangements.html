@@ -5642,7 +5642,7 @@
 				                        line.setAttribute("x1", x1); line.setAttribute("y1", y1);
 				                        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
 												//normal												
-												if(1 == 1){
+												if(1 == 0){
 				                        	line.setAttribute("stroke", "rgb(0,0,0)");
 				                        	line.setAttribute("stroke-width", String(0.6*thick));
 				                        	layer.appendChild(line);
@@ -5726,7 +5726,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 1){
+							         if(1 == 0){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5842,7 +5842,7 @@
 							         }
 
 								//-23 circle packing
-								if(1 == 0){
+								if(1 == 1){
 							         	var appCheck = 0;
 							         	if((centX-1)*(centX-1) + (centY-2/sqrt)*(centY-2/sqrt) < 4 / (sqrt * sqrt)){
 							         		loopy: for(var c = 0; c < packing.length; c++){
@@ -5857,6 +5857,11 @@
 							         	else{ appCheck = 1; }
 							         	if(appCheck == 0){
 							         		xVals.push(x);
+										if(1 == 1){
+											circle.setAttribute("stroke-width", String(0.6*thick));
+							         			circle.setAttribute("stroke", "rgb(0,0,0)");
+							         			layer.appendChild(circle);
+										}
 							         		if(r != 1){ packing.push([centX,centY,rad]); }
 										else{outer = [centX,centY,rad];}
 										//add curvature text nodes
@@ -5892,7 +5897,7 @@
 										}
 							         	}
 							         	else{
-										if(1 == 1){
+										if(1 == 0){
 											xVals.push(x);
 							         			circle.setAttribute("stroke-width", String(0.6*thick));
 							         			circle.setAttribute("stroke", "rgb(180,180,180)");
@@ -6352,7 +6357,7 @@
                         }
                         else { scale = initWidth * two / (1.1666*sqrt); originX = maxWidth / 2 - scale * (two + 1) / 4; originY = (maxWidth + initWidth - 16.666) / 2; }
                         //for job talk in Q(sqrt(-23))
-                        if(1 == 0){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
+                        if(1 == 1){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
 			//for job talk in Q(sqrt(-1))
 			if(1 == 0){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
 			if(1 == 0){ scale = initWidth/(1.1666 * 0.03695); originX = maxWidth / 2 - scale * 35 / 26; originY = maxWidth / 2 + scale * 135 / (13 * sqrt); }
