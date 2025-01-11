@@ -5643,7 +5643,7 @@
 				                        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
 												//normal												
 												if(1 == 1){
-				                        	line.setAttribute("stroke", "rgb(180,180,180)");
+				                        	line.setAttribute("stroke", "rgb(0,0,0)");
 				                        	line.setAttribute("stroke-width", String(0.6*thick));
 				                        	layer.appendChild(line);
 				                        }												
@@ -5726,7 +5726,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 0){
+							         if(1 == 1){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5842,7 +5842,7 @@
 							         }
 
 								//-23 circle packing
-								if(1 == 1){
+								if(1 == 0){
 							         	var appCheck = 0;
 							         	if((centX-1)*(centX-1) + (centY-2/sqrt)*(centY-2/sqrt) < 4 / (sqrt * sqrt)){
 							         		loopy: for(var c = 0; c < packing.length; c++){
@@ -6239,7 +6239,7 @@
             		}
          		}
          		//packings
-         		if(1 == 1){
+         		if(1 == 0){
                	for(var k = 0; k < verts.length; k++){
                		var line = document.createElementNS(NS, "line");
                		line.setAttribute("data-value", "y");
