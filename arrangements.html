@@ -4224,7 +4224,7 @@
 				    if (e.target.id == "curvDown") { i = -1; }
 				    if (e.target.id == "curvUp") { i = 1; }
 				    if (i != 0) {
-				        curv.value = String(Math.min(maxCurv, Math.max(0, parseInt(curv.value) + i)));
+				        curv.value = String(Math.max(0, parseInt(curv.value) + i));
 				        delay(zoomPan);
 				    }
 				}
