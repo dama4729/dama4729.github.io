@@ -4215,7 +4215,7 @@
 				var maxCurv = Math.floor(1000 * (26.5 - 2 * sqrt / two) / canvasWidth);
 
 				if (e.type == "mousewheel" || e.type == "DOMMouseScroll") {
-				    curv.value = String(Math.min(maxCurv, Math.max(0, parseInt(curv.value) + Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail))))));
+				    curv.value = String(Math.max(0, parseInt(curv.value) + Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)))));
 				    delay(zoomPan);
 				}
 
