@@ -5726,7 +5726,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 0){
+							         if(1 == 1){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5940,7 +5940,7 @@
 							         }
 							         
 							         //Packing in S_8 for Delta=-23
-							         if (1 == 1 && (y-3*x) % 4 == 0 && q % 2 == 0) { 
+							         if (1 == 0 && (y-3*x) % 4 == 0 && q % 2 == 0) { 
 							         	var pack = -1;
 							         	if(centY > -1*sqrt*centX && centY < -1*sqrt*(centX-2)){
 							         		pack = 1;
@@ -6243,7 +6243,7 @@
             		}
          		}
          		//packings
-         		if(1 == 1){
+         		if(1 == 0){
                	for(var k = 0; k < verts.length; k++){
                		var line = document.createElementNS(NS, "line");
                		line.setAttribute("data-value", "y");
