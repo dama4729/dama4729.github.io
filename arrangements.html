@@ -5776,73 +5776,72 @@
 							         	}
 							         }
 										//-1, 2, 2, 3 packing
-										if(1 == 0){
+										if(1 == 1){
 							         	var appCheck = 0;
 							         	if(centX*centX + (centY-0.5)*(centY-0.5) < 0.25){
-							         		loopy: for(var c = 2; c < radii.length; c++){
-							         			var radC = sqrtp / (2*c);
-													for(var b = 0; b < radii[c].length; b++){
-														var centB = radii[c][b][0] / (2*c*sqrt);	
-														for(var a = 1; a < radii[c][b].length; a++){
-															var centA = radii[c][b][a] / (2*c);
-															if((centA-centX)*(centA-centX)+(centB-centY)*(centB-centY) <= radC*radC){
-																appCheck = 1; break loopy;
-															}													
-														}													
-													}							         		
-							         		}
+							         		loopy: for(var c = 0; c < packing.length; c++){
+							         			var radC = packing[c][2];
+											var centB = packing[c][1];	
+											var centA = packing[c][0];
+											if((centA-centX)*(centA-centX)+(centB-centY)*(centB-centY) <= radC*radC){
+												appCheck = 1; break loopy;													
+											}													
+										}
 							         	}
 							         	else{ appCheck = 1; }
 							         	if(appCheck == 0){
 							         		xVals.push(x);
-										circle.setAttribute("stroke-width", String(0.6 * thick));
-										circle.setAttribute("stroke", color);
-										layer.appendChild(circle);
-							         		packing.push([centX,centY,rad]);
+										if(1 == 1){
+											circle.setAttribute("stroke-width", String(0.6 * thick));
+											circle.setAttribute("stroke", color);
+											layer.appendChild(circle);
+										}
+							         		if(r != 1){ packing.push([centX,centY,rad]); }
+										else{outer = [centX,centY,rad];}
 										//add curvature text nodes
 										if(1 == 0){
-							         		if(r != 1){
-							         			var mult = 0.05;
-							         			if(r >= 10){ mult = 0.035; }
-							         			if(r >= 100){ mult = 0.022; }
-							         			var newText = document.createElementNS(NS, "text");
-							         			newText.setAttribute("x",String(originX + scale * (centX)));     
-													newText.setAttribute("y",String(originY - scale * (centY))); 
-													newText.setAttribute("font-size",String(canvasWidth*mult*16/r));
-													newText.setAttribute("text-anchor","middle");
-													newText.setAttribute("alignment-baseline","central");
-													newText.setAttribute("fill","rgb(0,0,0)");
-													var textNode = document.createTextNode(r.toString());
-													newText.appendChild(textNode);
-													layer.appendChild(newText);
-												}
-										if(r == 1){
-													var mult = 0.01;
-							         			var newText = document.createElementNS(NS, "text");
-							         			newText.setAttribute("x",String(originX + scale * 0.4));     
-													newText.setAttribute("y",String(originY - scale * 0.93)); 
-													newText.setAttribute("font-size",String(canvasWidth*mult*16/r));
-													newText.setAttribute("text-anchor","middle");
-													newText.setAttribute("alignment-baseline","central");
-													newText.setAttribute("fill","rgb(0,0,0)");
-													var textNode = document.createTextNode("-1");
-													newText.appendChild(textNode);
-													layer.appendChild(newText);
-										}
+							         			if(r != 1){
+							         				var mult = 0.05;
+							         				if(r >= 10){ mult = 0.035; }
+							         				if(r >= 100){ mult = 0.022; }
+							         				var newText = document.createElementNS(NS, "text");
+							         				newText.setAttribute("x",String(originX + scale * (centX)));     
+												newText.setAttribute("y",String(originY - scale * (centY))); 
+												newText.setAttribute("font-size",String(canvasWidth*mult*16/r));
+												newText.setAttribute("text-anchor","middle");
+												newText.setAttribute("alignment-baseline","central");
+												newText.setAttribute("fill","rgb(0,0,0)");
+												var textNode = document.createTextNode(r.toString());
+												newText.appendChild(textNode);
+												layer.appendChild(newText);
+											}
+											if(r == 1){
+												var mult = 0.01;
+							         				var newText = document.createElementNS(NS, "text");
+							         				newText.setAttribute("x",String(originX + scale * 0.4));     
+												newText.setAttribute("y",String(originY - scale * 0.93)); 
+												newText.setAttribute("font-size",String(canvasWidth*mult*16/r));
+												newText.setAttribute("text-anchor","middle");
+												newText.setAttribute("alignment-baseline","central");
+												newText.setAttribute("fill","rgb(0,0,0)");
+												var textNode = document.createTextNode("-1");
+												newText.appendChild(textNode);
+												layer.appendChild(newText);
+											}
 										}
 							         	}
 							         	else{
 										if(1 == 0){
-												xVals.push(x);
-							         		circle.setAttribute("stroke-width", String(0.6*thick));
-							         		circle.setAttribute("stroke", color);
-							         		layer.appendChild(circle);
+											xVals.push(x);
+							         			circle.setAttribute("stroke-width", String(0.6*thick));
+							         			circle.setAttribute("stroke", color);
+							         			layer.appendChild(circle);
 										}
 							         	}
-							         }
+								}
 
 								//-23 circle packing
-								if(1 == 1){
+								if(1 == 0){
 							         	var appCheck = 0;
 							         	if((centX)*(centX) + (centY-2/sqrt)*(centY-2/sqrt) < 4 / (sqrt * sqrt)){
 							         		loopy: for(var c = 0; c < packing.length; c++){
@@ -6357,9 +6356,9 @@
                         }
                         else { scale = initWidth * two / (1.1666*sqrt); originX = maxWidth / 2 - scale * (two + 1) / 4; originY = (maxWidth + initWidth - 16.666) / 2; }
                         //for job talk in Q(sqrt(-23))
-                        if(1 == 1){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
+                        if(1 == 0){ scale = initWidth/0.98; originX = (maxWidth)/2;  originY = (maxWidth + initWidth - 16.666) / 2; }
 			//for job talk in Q(sqrt(-1))
-			if(1 == 0){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
+			if(1 == 1){ scale = initWidth/1.1666; originX = maxWidth / 2; originY = (maxWidth + initWidth - 16.666) / 2; }
 			if(1 == 0){ scale = initWidth/(1.1666 * 0.03695); originX = maxWidth / 2 - scale * 35 / 26; originY = maxWidth / 2 + scale * 135 / (13 * sqrt); }
                         circArray = []; reps = []; normInd = []; styles = []; R = Math.floor(26.5 - 2 * sqrt / two); visible = []; curvSet = initWidth; prin = []; tor = []; dets = []; infoArray = []; selectArray = [];
                         background.setAttribute("fill", "none"); canvasWidth = initWidth; canvasLeft = canvasTop = (maxWidth - initWidth) / 2; delta = initWidth / containWidth; infoCount = 0; selectCount = 0; selectLabelCount = 0;
