@@ -4809,7 +4809,7 @@
 			thick = 0.3;
                         pdf.circle(pdfX, pdfY, pdfRad).lineWidth(thick).strokeColor([86,2,0]).fillColor([193,3,1]).fillOpacity(1).fillAndStroke();
                      }
-			if (1 == 0) {
+			if (1 == 1) {
 				var pdfRad = ratio * scale2 * 0.125;
 				var pdfX = ratio * (originX + scale2 * (0.125) - canvasLeft);
 				var pdfY = ratio * (originY - scale2 * (0.5) - canvasTop);
@@ -5799,7 +5799,7 @@
 							         		if(r != 1){ packing.push([centX,centY,rad]); }
 										else{outer = [centX,centY,rad];}
 										//add curvature text nodes
-										if(1 == 1){
+										if(1 == 0){
 							         			if(r != 1){
 							         				var mult = 0.05;
 							         				if(r >= 10){ mult = 0.035; }
