@@ -5658,6 +5658,11 @@
 				                        		line.setAttribute("stroke-width", String(1*thick));
 				                        		layer.appendChild(line);
 				                        	}
+								else{
+				                        		line.setAttribute("stroke", "rgb(180,180,180)";
+				                        		line.setAttribute("stroke-width", String(0.6*thick));
+				                        		layer.appendChild(line);
+				                        	}
 				                        }
 				                        xVals.push(q);
 				                    	}
@@ -5941,8 +5946,8 @@
 							         
 							         //Packing in S_8 for Delta=-23
 							         if (1 == 1 && (y-x) % 4 == 0 && q % 2 == 0) { 
-							         	var pack = -1;
-							         	if(centY > -1*sqrt*centX && centY < -1*sqrt*(centX-2)){
+							         	var pack = 1;
+							         	if(1 == 0 && centY > -1*sqrt*centX && centY < -1*sqrt*(centX-2)){
 							         		pack = 1;
 							         		for(var l = 0; l < packing.length; l++){
 													if(Math.pow(centX-packing[l][0],2)+Math.pow(centY-packing[l][1],2)<Math.pow(packing[l][2],2)){
@@ -5954,11 +5959,16 @@
 												packing.push([centX,centY,rad]);						         
 							        	 	}
 							         	else{ 
-							         		circle.setAttribute("stroke", "rgb(180,180,180)"); 
-							         		circle.setAttribute("stroke-width", String(0.6*thick)); 
+							         		circle.setAttribute("stroke", "rgb(0,0,0)"); 
+							         		circle.setAttribute("stroke-width", String(0.6 * thick)); 
 							         		layer.appendChild(circle);
 							         	}
 							         }
+									else{
+										circle.setAttribute("stroke", "rgb(0,0,0)"); 
+							         		circle.setAttribute("stroke-width", String(0.6 * thick)); 
+							         		layer.appendChild(circle);
+									}
 							         //Baragar-Lautzenheiser
 							         if(1 == 0){
 							         	var pack = -1;
