@@ -5642,7 +5642,7 @@
 				                        line.setAttribute("x1", x1); line.setAttribute("y1", y1);
 				                        line.setAttribute("x2", x2); line.setAttribute("y2", y2);
 												//normal												
-												if(1 == 0){
+												if(1 == 1){
 				                        	line.setAttribute("stroke", "rgb(0,0,0)");
 				                        	line.setAttribute("stroke-width", String(0.6*thick));
 				                        	layer.appendChild(line);
@@ -5652,7 +5652,7 @@
 				                        	verts.push([x1,y1,x2,y2]);
 				                        }
 												//Packing in S_8 for Delta=-23				                        
-				                        if(1 == 1){
+				                        if(1 == 0){
 				                        	if(q % 2 == 0 && (x+y) % 4 == 0){
 				                        		line.setAttribute("stroke", color);
 				                        		line.setAttribute("stroke-width", String(1*thick));
@@ -5731,7 +5731,7 @@
 							         circle.setAttribute("r", String(scale * rad));
 							         circle.setAttribute("fill", "none");
 										//normal							         
-							         if(1 == 0){
+							         if(1 == 1){
 							         	xVals.push(x);
 							         	circle.setAttribute("stroke-width", String(0.6*thick));
 							         	
@@ -5945,7 +5945,7 @@
 							         }
 							         
 							         //Packing in S_8 for Delta=-23
-							         if (1 == 1 && (y-x) % 4 == 0 && q % 2 == 0) { 
+							         if (1 == 0 && (y-x) % 4 == 0 && q % 2 == 0) { 
 							         	var pack = 1;
 							         	if(1 == 0 && centY > -1*sqrt*centX && centY < -1*sqrt*(centX-2)){
 							         		pack = 1;
@@ -5966,11 +5966,6 @@
 										}
 							         	}
 							         }
-									else{
-										circle.setAttribute("stroke", "rgb(180,180,180)"); 
-							         		circle.setAttribute("stroke-width", String(0.6 * thick)); 
-							         		layer.appendChild(circle);
-									}
 							         //Baragar-Lautzenheiser
 							         if(1 == 0){
 							         	var pack = -1;
@@ -6255,7 +6250,7 @@
             		}
          		}
          		//packings
-         		if(1 == 1){
+         		if(1 == 0){
                	for(var k = 0; k < verts.length; k++){
                		var line = document.createElementNS(NS, "line");
                		line.setAttribute("data-value", "y");
